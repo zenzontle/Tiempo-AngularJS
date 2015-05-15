@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Basic Biding</title>
+    <script src="../app/vendors/angular/angular.min.js"></script>
+    <script src="js/basicApp.js"></script>
+</head>
+<body ng-controller="FirstController">
+    {{test}}}
+
+    <div ng-repeat="name in nameList">
+        {{name}}
+    </div>
+
+    <br />
+    <div ng-repeat="person in personList">
+        <label> Name: {{person.name}}, Age: {{person.age}}</label>
+    </div>
+</body>
+</html>
