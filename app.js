@@ -8,5 +8,5 @@ server.get(/.*/, restify.serveStatic({
 }));
 
 server.listen(8124, function() {
-   console.log('Listening from 8124');
+   console.log('%s listening at %s', server.name, server.url);
 });
