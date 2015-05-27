@@ -3,34 +3,34 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Form validation</title>
+    <link rel="stylesheet" href="../app/vendors/bootstrap/dist/css/bootstrap.min.css"/>
     <script src="../app/vendors/angular/angular.min.js"></script>
     <script src="js/formValidation.js"></script>
 </head>
-<body ng-controller="ValidationController">
-    <div class="container">
+<body>
+    <div class="container" ng-controller="ValidationController">
         <h2>Form Validation</h2>
 
-        <form name="form" class="css-form">
-            <div ng-if="invalidName || invalidEmail || !acceptCheckbox" class="alert alert-danger" role="alert" ng-show="form.$submitted">
+        <form name="form" class="css-form" novalidate>
+            <div class="alert alert-danger" ng-show="invalidForm" role="alert">
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                 <span class="sr-only">Error:</span>
                 There are some errors, please correct them below
+                <div ng-repeat="error in formErrors">{{error}}</div>
             </div>
+
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input id="name" ng-model="name" ng-change="onNameChange()" type="name" class="form-control" required placeholder="Enter your Name">
-                <div ng-if="invalidName" ng-show="form.$submitted">Name cannot contain numbers!</div>
+                <input id="name" class="form-control" ng-model="user.name" type="name" required placeholder="Enter your Name">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input id="email" ng-model="email" ng-change="onEmailChange()" type="email" class="form-control" required placeholder="Enter your Name">
-                <div ng-if="invalidEmail" ng-show="form.$submitted">Email lengh cannot be higher than 20 characters!</div>
+                <input id="email" class="form-control" ng-model="user.email" type="email" required placeholder="Enter your Email">
             </div>
             <div class="checkbox">
-                <label><input ng-model="acceptCheckbox" ng-change="onAcceptChange()" type="checkbox"> Accept Terms</label>
-                <div ng-if="!acceptCheckbox" ng-show="form.$submitted">Terms need to be accepted!</div>
+                <label><input ng-model="terms" type="checkbox"> Accept Terms</label>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" ng-click="onSubmit()">Submit</button>
         </form>
     </div>
 </body>

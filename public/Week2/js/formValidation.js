@@ -3,28 +3,30 @@
  */
 
 angular.module('MyApp', []).controller('ValidationController', ['$scope', function ($scope) {
+    "use strict";
 
-    $scope.invalidName = false;
-    $scope.nameLengthLimit = 20;
+    $scope.formErrors = [];
+    $scope.terms = false;
+    $scope.invalidForm = false;
 
-    $scope.onNameChange = function () {
-        $scope.invalidName = ($scope.name.length > $scope.nameLengthLimit);
-        if ($scope.invalidName === false && $scope.name.match(/\d+/g) !== null)
-        {
-            $scope.invalidName = true;
+    $scope.user = {
+        name: undefined,
+        email: undefined
+    }
+
+    $scope.onSubmit = function () {
+        $scope.formErrors = [];
+
+        for (var prompt in $scope.user) {
+            if ($scope.user[prompt] === undefined) {
+                $scope.formErrors.push("You must specify a valid value for field: " + prompt);
+            }
         }
-    };
 
-    $scope.invalidEmail = false;
-    $scope.emailLengthLimit = 20;
+        if (!$scope.terms) {
+            $scope.formErrors.push("You must accept the terms and conditions");
+        }
 
-    $scope.onEmailChange = function () {
-        $scope.invalidEmail = ($scope.email.length > $scope.emailLengthLimit);
-    };
-
-    $scope.acceptCheckbox = false;
-
-    $scope.onAcceptChange = function () {
-        $scope.acceptCheckbox = $scope.acceptCheckbox;
+        $scope.invalidForm = $scope.formErrors.length > 0;
     };
 }])
