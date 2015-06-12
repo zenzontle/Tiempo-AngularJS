@@ -6,7 +6,7 @@ var App = window.App;
 App.directive('emptyDirective', ['$log', function ($log) {
     "use strict";
 
-    $log.log('Directive created');
+    $log.log('emptyDirective created');
 
     return {
         template: '<h1>Hello</h1>',
