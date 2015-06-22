@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Restrict usage</title>
+    <link rel="stylesheet" href="../app/vendors/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="../app/vendors/angular/angular.min.js"></script>
+    <script src="../app/vendors/angular-resource/angular-resource.min.js"></script>
+    <script src="js/AppConfiguration.js"></script>
+    <script src="js/MainController.js"></script>
+    <script src="js/directive/restrictTest.js"></script>
+</head>
+<body>
+<div class="container directive_usage" ng-controller="MainController">
+    <h2>Directive Usage</h2>
+    <p>
+        <h3>The restrict option is typically set to:</h3>
+        <ul>
+            <li>'A' - only matches attribute name</li>
+            <li>'E' - only matches element name</li>
+            <li>'C' - only matches class name</li>
+        </ul>
+    </p>
+    <div>
+        <h4>Restrict by attribute</h4>
+        <div restrict-test></div>
+    </div>
+    <div>
+        <h4>Restrict by element</h4>
+        <restrict-test></restrict-test>
+    </div>
+    <div>
+        <h4>Restrict by class</h4>
+        <div class="restrict-test"></div>
+    </div>
+</div>
+</body>
+</html>

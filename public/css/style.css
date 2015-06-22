@@ -73,6 +73,9 @@ div.directive_usage {
       background-color: #46BFBD; }
     div.directive_usage td.person-sex span.person-sex-female {
       background-color: #FDB45C; }
+    div.directive_usage td.person-sex div.super-input input {
+      width: 450px !important;
+      font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial; }
 
 html, body {
   margin: 0;
