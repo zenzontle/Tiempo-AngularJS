@@ -25,6 +25,8 @@ div.user_profile {
     text-align: right; }
     div.user_profile div.submit_terms button {
       margin-top: 10px; }
+  div.user_profile input[type="checkbox"] {
+    display: inline-block; }
 
 div.directive_usage {
   margin-left: 10px; }

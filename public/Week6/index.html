@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Main Project</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' type='text/css'>
+    <link rel="stylesheet" href="../app/vendors/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../app/vendors/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/templatemo-style.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../app/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../app/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../app/vendors/underscore/underscore-min.js"></script>
+    <script src="../app/vendors/chartjs/Chart.min.js"></script>
+    <script src="../app/vendors/angular/angular.min.js"></script>
+    <script src="../app/vendors/angular-resource/angular-resource.min.js"></script>
+    <script src="../app/vendors/angular-route/angular-route.min.js"></script>
+    <script src="js/AppConfiguration.js"></script>
+    <script src="js/MainController.js"></script>
+    <script src="module/dashboard/DashboardController.js"></script>
+    <script src="module/chart/ChartController.js"></script>
+    <script src="services/RestService.js"></script>
+    <script src="services/ProfileService.js"></script>
+    <script src="module/profile/ProfileController.js"></script>
+</head>
+<body>
+<div ng-controller="MainController" class="templatemo-flex-row">
+    <div ng-include="'module/navigation/navPanel.html'"></div>
+    <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+
+        </div>
+        <div ng-view class="templatemo-content-container" style="height: 937px">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
