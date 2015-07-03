@@ -3,7 +3,8 @@
  */
 window.App = angular.module('App', [
     'ngRoute',
-    'ngResource'
+    'ngResource',
+    'ngCookies'
 ]).config([
     '$routeProvider',
     '$rootScopeProvider',
@@ -12,7 +13,15 @@ window.App = angular.module('App', [
 
         $rootScopeProvider.digestTtl(30);
 
-        $routeProvider.when('/dashboard', {
+        $routeProvider.when('/',
+        {
+            templateUrl: 'module/dashboard/Dashboard.html',
+            controller: 'DashboardController'
+        }).when('/login',
+        {
+            templateUrl: 'module/login/Login.html',
+            controller: 'LoginController'
+        }).when('/dashboard', {
             templateUrl: 'module/dashboard/Dashboard.html',
             controller: 'DashboardController'
         }).when('/chart', {
@@ -25,7 +34,7 @@ window.App = angular.module('App', [
             redirectTo: '/404'
         });
     }
-]).run(['$rootScope', '$http', '$log', '$location', function ($rootScope, $http, $log, $location) {
+]).run(['$rootScope', '$http', '$log', '$location', '$cookies', function ($rootScope, $http, $log, $location, $cookies) {
     "use strict";
 
     $rootScope.$on('$routeChangeError', function (event, current, previous, rejection) {
@@ -34,6 +43,13 @@ window.App = angular.module('App', [
 
     $rootScope.$on('$routeChangeStart', function (event, current, previous, rejection) {
         $log.log('Route change start');
+        $log.log('Validate user login access');
+        var status = $cookies.get('isLogged');
+        $log.log('Status', status);
+
+        if (!status) {
+            $location.url('/login');
+        }
     });
 
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous, rejection) {

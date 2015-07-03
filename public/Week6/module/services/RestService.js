@@ -6,11 +6,17 @@ var App = window.App;
 App.service('RestService', ["$log", "$resource", function($log, $resource) {
     "use strict";
 
-    $log.log("RestService Loaded")
+    $log.log("RestService Loaded");
 
     this.UserProfileServiceHandler = {
         getProfile: function () {
             return $resource('../jsonTest/profileData.json', {}, {query: {method: 'GET', params: {}}});
+        }
+    };
+
+    this.UserLoginHandler = {
+        getLogin: function () {
+            return $resource('../jsonTest/loginAccess.json', {}, {query: {method: 'GET', params: {}}});
         }
     };
 }]);

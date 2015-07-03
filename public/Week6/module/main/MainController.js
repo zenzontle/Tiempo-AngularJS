@@ -3,8 +3,10 @@
  */
 var App = window.App;
 
-App.controller('MainController', ['$scope', '$log', function ($scope, $log) {
+App.controller('MainController', ['$rootScope', '$scope', '$log', 'LoginAccess', function ($rootScope, $scope, $log, LoginAccess) {
     "use strict";
+
+    $scope.isLogged = LoginAccess.isLogged();
 
     $log.log('MainController has been created');
 
@@ -15,4 +17,8 @@ App.controller('MainController', ['$scope', '$log', function ($scope, $log) {
         {url: "#maps", icon: "fa-map-marker", title: "Maps"},
         {url: "#profile", icon: "fa-user", title: "Profile"}
     ];
+
+    $rootScope.$on('isLogged', function () {
+        $scope.isLogged = true;
+    });
 }]);
