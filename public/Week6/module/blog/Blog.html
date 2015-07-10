@@ -2,8 +2,15 @@
     <div class="templatemo-content-widget white-bg col-2">
         <i class="fa fa-times"></i>
 
-        <h2 class="templatemo-inline-block">Blog Section</h2>
+        <h2 class="templatemo-inline-block">Latest Blog Entries</h2>
         <hr/>
-        <p>Blog Test</p>
+        <ul class="list-group">
+            <li class="list-group-item entry-item" ng-repeat="entry in entries">
+                <button type="button" class="btn btn-default action"><span class="glyphicon glyphicon-minus-sign"></span> Delete</button>
+                <button type="button" class="btn btn-default action"><span class="glyphicon glyphicon-pencil"> Edit</span></button>
+                <span class="badge glyphicon glyphicon-comment comment">&nbsp;{{entry.commentNum}}</span>
+                <div class="entry-title"><a href="#view/{{entry.id}}"> {{entry.title}} </a></div>
+            </li>
+        </ul>
     </div>
 </div>

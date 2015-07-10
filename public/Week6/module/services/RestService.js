@@ -19,4 +19,16 @@ App.service('RestService', ["$log", "$resource", function($log, $resource) {
             return $resource('../jsonTest/loginAccess.json', {}, {query: {method: 'GET', params: {}}});
         }
     };
+
+    this.BlogEntries = {
+        createPost: function () {
+
+        },
+        editPost: function () {
+
+        },
+        getPostList: function () {
+            return $resource('../database/posts.json', {}, {query: {method: 'GET', params: {}}});
+        }
+    };
 }]);

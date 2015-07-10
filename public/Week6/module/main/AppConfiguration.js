@@ -4,7 +4,8 @@
 window.App = angular.module('App', [
     'ngRoute',
     'ngResource',
-    'ngCookies'
+    'ngCookies',
+    'textAngular'
 ]).config([
     '$routeProvider',
     '$rootScopeProvider',

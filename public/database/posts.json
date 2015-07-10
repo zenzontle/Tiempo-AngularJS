@@ -1,0 +1,22 @@
+{
+  "PostList": [
+    {
+      "id": "1",
+      "title": "N64 Controlled Hacked To Work On Xbox One",
+      "content": "<div> <strong>Content</strong> of the Post 1 </div>",
+      "commentNum": 5
+    },
+    {
+      "id": "2",
+      "title": "People Are Scamming Destiny's Red Bull DLC",
+      "content": "<div> <strong>Content</strong> of the Post 2 </div>",
+      "commentNum": 2
+    },
+    {
+      "id": "3",
+      "title": "Dying Metro: Last Light Character is Really Milking It",
+      "content": "<div> <strong>Content></strong> of the Post 3 </div>",
+      "commentNum": 8
+    }
+  ]
+}

@@ -79,6 +79,21 @@ div.directive_usage {
       width: 450px !important;
       font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial; }
 
+li.entry-item {
+  height: auto;
+  font-size: 18px; }
+  li.entry-item div.entry-title {
+    padding-top: 5px; }
+  li.entry-item span.comment {
+    height: 33px;
+    padding: 11px;
+    margin-right: 10px; }
+  li.entry-item span.badge {
+    float: left !important; }
+  li.entry-item button.action {
+    margin-right: 10px;
+    float: right; }
+
 html, body {
   margin: 0;
   padding: 0;
