@@ -16,7 +16,11 @@ App.service('LoginAccess', ["$log", "RestService", "$cookies", function ($log, R
         return $cookies.get('isLogged');
     };
 
-    this.setLogged = function(logged) {
-        $cookies.put('isLogged', logged);
+    this.Login = function () {
+        $cookies.put('isLogged', true);
+    }
+
+    this.Logout = function() {
+        $cookies.remove("isLogged");
     };
 }]);

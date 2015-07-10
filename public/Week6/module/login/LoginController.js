@@ -15,7 +15,7 @@ App.controller('LoginController', ['$rootScope', '$scope', '$log', 'LoginAccess'
             userData.$promise.then(function (data) {
                 $log.log(data);
                 if (data.hasOwnProperty('valid') && data.valid) {
-                    LoginAccess.setLogged(true);
+                    LoginAccess.Login();
                     $rootScope.$broadcast('isLogged');
                     $location.url('/blog');
                 }
