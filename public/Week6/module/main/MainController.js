@@ -11,11 +11,8 @@ App.controller('MainController', ['$rootScope', '$scope', '$log', 'LoginAccess',
     $log.log('MainController has been created');
 
     $scope.dashboardItems = [
-        {url: "#dashboard", icon: "fa-home", title: "Dashboard"},
-        {url: "#chart", icon: "fa-bar-chart", title: "Chart"},
-        {url: "#visualization", icon: "fa-database", title: "Data Visualization"},
-        {url: "#maps", icon: "fa-map-marker", title: "Maps"},
-        {url: "#profile", icon: "fa-user", title: "Profile"}
+        {url: "#blog", icon: "fa-list", title: "Blog Entries"},
+        {url: "#post", icon: "fa-plus", title: "Post"}
     ];
 
     $rootScope.$on('isLogged', function () {

@@ -17,7 +17,7 @@ App.controller('LoginController', ['$rootScope', '$scope', '$log', 'LoginAccess'
                 if (data.hasOwnProperty('valid') && data.valid) {
                     LoginAccess.setLogged(true);
                     $rootScope.$broadcast('isLogged');
-                    $location.url('/dashboard');
+                    $location.url('/blog');
                 }
             });
         }

@@ -15,18 +15,18 @@ window.App = angular.module('App', [
 
         $routeProvider.when('/',
         {
-            templateUrl: 'module/dashboard/Dashboard.html',
-            controller: 'DashboardController'
+            templateUrl: 'module/blog/Blog.html',
+            controller: 'BlogController'
         }).when('/login',
         {
             templateUrl: 'module/login/Login.html',
             controller: 'LoginController'
-        }).when('/dashboard', {
-            templateUrl: 'module/dashboard/Dashboard.html',
-            controller: 'DashboardController'
-        }).when('/chart', {
-            templateUrl: 'module/chart/Chart.html',
-            controller: 'ChartController'
+        }).when('/blog', {
+            templateUrl: 'module/blog/Blog.html',
+            controller: 'BlogController'
+        }).when('/post', {
+            templateUrl: 'module/post/Post.html',
+            controller: 'PostController'
         }).when('/profile', {
             templateUrl: 'module/profile/Profile.html',
             controller: 'ProfileController'
