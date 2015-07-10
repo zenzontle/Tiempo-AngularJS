@@ -3,7 +3,7 @@
  */
 var App = window.App;
 
-App.controller('BlogController', ['$scope', '$log', 'BlogService', function ($scope, $log, BlogService) {
+App.controller('BlogController', ['$scope', '$log', '$location', 'BlogService', function ($scope, $log, $location, BlogService) {
     "use strict";
 
     $log.log('Blog Controller has been created');
@@ -16,4 +16,8 @@ App.controller('BlogController', ['$scope', '$log', 'BlogService', function ($sc
         }
 
     });
+
+    $scope.onPostEdit = function (entryId) {
+        $location.url('edit/' + entryId);
+    };
 }]);

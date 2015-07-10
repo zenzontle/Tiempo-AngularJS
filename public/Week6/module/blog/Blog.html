@@ -6,8 +6,12 @@
         <hr/>
         <ul class="list-group">
             <li class="list-group-item entry-item" ng-repeat="entry in entries">
-                <button type="button" class="btn btn-default action"><span class="glyphicon glyphicon-minus-sign"></span> Delete</button>
-                <button type="button" class="btn btn-default action"><span class="glyphicon glyphicon-pencil"> Edit</span></button>
+                <button type="button" class="btn btn-default action"><span
+                        class="glyphicon glyphicon-minus-sign"></span> Delete
+                </button>
+                <button type="button" class="btn btn-default action" ng-click="onPostEdit(entry.id)"><span
+                        class="glyphicon glyphicon-pencil"> Edit</span>
+                </button>
                 <span class="badge glyphicon glyphicon-comment comment">&nbsp;{{entry.commentNum}}</span>
                 <div class="entry-title"><a href="#view/{{entry.id}}"> {{entry.title}} </a></div>
             </li>

@@ -28,6 +28,9 @@ window.App = angular.module('App', [
         }).when('/view/:id', {
             templateUrl: 'module/view/View.html',
             controller: 'ViewController'
+        }).when('/edit/:id', {
+            templateUrl: 'module/post/Post.html',
+            controller: 'PostController'
         }).when('/post', {
             templateUrl: 'module/post/Post.html',
             controller: 'PostController'
